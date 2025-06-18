@@ -1,7 +1,7 @@
 <template>
     <div class="page-wrapper">
         <div class="container">
-            <h1>Créer ton équipe maintenant !</h1>
+            <h1>Crée ton équipe maintenant !</h1>
             <Button to="/Home" class="big-button">GO</Button>
         </div>
     </div>
