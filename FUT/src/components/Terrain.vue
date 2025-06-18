@@ -27,11 +27,25 @@
                 </div>
             </div>
         </div>
+        <button @click="downloadTeam" class="download-btn">Télécharger en PNG</button>
     </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed } from 'vue';
+import html2canvas from 'html2canvas';
+
+const downloadTeam = () => {
+    const field = document.querySelector('.field')
+    if (!field) return
+
+    html2canvas(field, { backgroundColor: null, scale: 2 }).then(canvas => {
+        const link = document.createElement('a')
+        link.download = 'mon_11.png'
+        link.href = canvas.toDataURL()
+        link.click()
+    })
+};
 
 const props = defineProps({
     team: Array
@@ -228,5 +242,16 @@ const getPositionStyle = (role) => {
     font-size: 0.6rem;
     color: yellow;
     text-shadow: 1px 1px 2px black;
+}
+
+.download-btn {
+    display: block;
+    margin: 1rem auto;
+    padding: 8px 12px;
+    background: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 </style>
