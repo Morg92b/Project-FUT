@@ -2,7 +2,7 @@
     <div class="page-wrapper">
         <div class="container">
             <h1>Créer ton équipe maintenant !</h1>
-            <Button to="/Home">GO</Button>
+            <Button to="/Home" class="big-button">GO</Button>
         </div>
     </div>
 </template>
@@ -12,7 +12,7 @@
 import Button from '@/components/Button.vue';
 </script>
 
-<style scoped>
+<style>
 .page-wrapper {
     width: 100vw;
     height: 100vh;
@@ -29,16 +29,20 @@ import Button from '@/components/Button.vue';
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 0rem;
 }
 
 .container h1 {
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: 900;
     color: #ff4081;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     opacity: 0;
     animation: fadeIn 2s ease forwards, floatUpDown 3s ease-in-out infinite;
+}
+
+.big-button {
+    transform: scale(1.4) !important;
 }
 
 
